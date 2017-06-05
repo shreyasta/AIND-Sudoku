@@ -49,23 +49,23 @@ def naked_twins(values):
     # Find all instances of naked twins
     # Eliminate the naked twins as possibilities for their peers
       new_values = values.copy()
-        naked_twins = []
+        n_twins = []
         for box in new_values:
             if len(new_values[box]) == 2
                         for peer in peers[box]:
                 if box < peer and new_values[peer] == new_values[box]:
-                    naked_twins.append([box, peer])
-    for nt in naked_twins:
-        # Find the units that contains these two naked twins
-        units = [u for u in unitlist if nt[0] in u and nt[1] in u]
+                naked_twins.append([box, peer])
+                #Finding the box that contains the naked twins
+    for ntunit in n_twins:
+            units = [u for u in unitlist if ntunit[0] in u and ntunit[1] in u]
         for unit in units:
             for box in unit:
-                if box != nt[0] and box != nt[1]:
+                if box != ntunit[0] and box != ntunit[1]:
                     
-                    new_values[box] = new_values[box].replace(new_values[nt[0]][0], '')
+                    new_values[box] = new_values[box].replace(new_values[ntunit[0]][0], '')
                     assign_value(new_values, box, new_values[box]) # viz
                     
-                    new_values[box] = new_values[box].replace(new_values[nt[0]][1], '')
+                    new_values[box] = new_values[box].replace(new_values[ntunit[0]][1], '')
                     assign_value(new_values, box, new_values[box]) # viz
                     
     if len([box for box in new_values.keys() if len(new_values[box]) == 0]):
