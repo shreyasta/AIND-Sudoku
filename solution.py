@@ -37,7 +37,7 @@ def assign_value(values, box, value):
         assignments.append(values.copy())
     return values
 
-def naked_twins(values):
+#def naked_twins(values):
     """Eliminate values using the naked twins strategy.
     Args:
         values(dict): a dictionary of the form {'box_name': '123456789', ...}
@@ -48,30 +48,7 @@ def naked_twins(values):
 
     # Find all instances of naked twins
     # Eliminate the naked twins as possibilities for their peers
-      new_values = values.copy()
-        n_twins = []
-        for box in new_values:
-            if len(new_values[box]) == 2
-                        for peer in peers[box]:
-                if box < peer and new_values[peer] == new_values[box]:
-                naked_twins.append([box, peer])
-                #Finding the box that contains the naked twins
-    for ntunit in n_twins:
-            units = [u for u in unitlist if ntunit[0] in u and ntunit[1] in u]
-        for unit in units:
-            for box in unit:
-                if box != ntunit[0] and box != ntunit[1]:
-                    
-                    new_values[box] = new_values[box].replace(new_values[ntunit[0]][0], '')
-                    assign_value(new_values, box, new_values[box]) # viz
-                    
-                    new_values[box] = new_values[box].replace(new_values[ntunit[0]][1], '')
-                    assign_value(new_values, box, new_values[box]) # viz
-                    
-    if len([box for box in new_values.keys() if len(new_values[box]) == 0]):
-        return False
-    return new_values
-
+     
 
 #grid = "4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......"
 
