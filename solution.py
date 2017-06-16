@@ -86,7 +86,7 @@ def eliminate(values):
         digit = values[box]
         for peer in peers[box]:
             values[peer] = values[peer].replace(digit,'')
-    return values
+     return values
 
 def only_choice(values):
        for unit in unitlist:
