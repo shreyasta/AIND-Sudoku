@@ -82,7 +82,7 @@ def display(values):
 
 def eliminate(values):
      solved_values = [box for box in values.keys() if len(values[box]) == 1]
-    for box in solved_values:
+     for box in solved_values:
         digit = values[box]
         for peer in peers[box]:
             values[peer] = values[peer].replace(digit,'')
