@@ -53,15 +53,6 @@ def assign_value(values, box, value):
 #grid = "4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......"
 
 def grid_values(grid):
-    """
-    Convert grid into a dict of {square: char} with '123456789' for empties.
-    Args:
-        grid(string) - A grid in string form.
-    Returns:
-        A grid in dictionary form
-            Keys: The boxes, e.g., 'A1'
-            Values: The value in each box, e.g., '8'. If the box has no value, then the value will be '123456789'.
-    """
     chars = [c for c in grid if c in boxes or c in '0.']
     assert len(grid) == 81
     return dict(zip(boxes, grid))
