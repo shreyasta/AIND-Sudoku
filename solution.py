@@ -62,7 +62,7 @@ def grid_values(grid):
             Keys: The boxes, e.g., 'A1'
             Values: The value in each box, e.g., '8'. If the box has no value, then the value will be '123456789'.
     """
-    chars = [c for c in grid if c in boxes or c in '0.']
+     chars = [c for c in grid if c in boxes or c in '0.']
     assert len(grid) == 81
     return dict(zip(boxes, grid))
 
@@ -82,11 +82,11 @@ def display(values):
 
 def eliminate(values):
      solved_values = [box for box in values.keys() if len(values[box]) == 1]
-     for box in solved_values:
+      for box in solved_values:
         digit = values[box]
         for peer in peers[box]:
             values[peer] = values[peer].replace(digit,'')
-     return values
+      return values
 
 def only_choice(values):
        for unit in unitlist:
